@@ -39,12 +39,12 @@ for i in range(epochs):
     w = w - learning_rate*dw
     b = b-learning_rate*db
     if i % 100 ==0:
-         cost = (1/(2*n))*np.sum((y_pred - y_train)**2)
-         cost_history.append(cost)
+        
          print(f"Epoch{i}, Cost = {cost:.4f}")
-       
+    cost = (1/(2*n))*np.sum((y_pred - y_train)**2)
+    cost_history.append(cost)   
 y_pred_gd = w * x_test_scaled.flatten()+b
-
+       
 print("Gradient Descent")
 print("------------------")
 print("Weight:",w)
